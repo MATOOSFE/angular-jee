@@ -1,0 +1,10 @@
+package com.matoosfe.angular.negocio.rs;
+
+import javax.enterprise.context.RequestScoped;
+import javax.ws.rs.Path;
+
+@RequestScoped
+@Path("")
+public class TipoProductoRS {
+
+}

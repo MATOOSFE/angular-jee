@@ -1,0 +1,25 @@
+/**
+ * Controlador para manejar productos
+ * 
+ * @param $scope
+ */
+(function() {
+	var productos = [ 
+	   {
+		   codigo : 01,
+		   nombre : "Manzana",
+		   precio: 5.3,
+	   },
+	   {
+		   codigo : 02,
+		   nombre : "Pera",
+		   precio: 5.4,
+	   } 
+	];
+	
+	var app = angular.module('mod_inventario', []);
+	app.controller('InventarioController', function(){
+		this.productos = productos;
+	});
+
+})();

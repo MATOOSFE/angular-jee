@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Página de Bienvenida</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+</head>
+<body ng-app>
+	<p>Esta es mi primera expresión con angular {{ 1 + 2}}</p>
+	<label>Usuario:</label><input type="text" ng-model="usuario">
+	<p> Hola {{usuario}} </p> 
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Página de Bienvenida</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+</head>
+<body ng-app="root">
+	<p>This is your first angular expression: {{ 1 + 2/body> }}</p>
+</body>
+</html>

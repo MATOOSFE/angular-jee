@@ -1,0 +1,71 @@
+package com.matoosfe.angular.modelo;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+
+/**
+ * The persistent class for the producto database table.
+ * 
+ */
+@Entity
+@NamedQuery(name = "Producto.findAll", query = "SELECT p FROM Producto p")
+public class Producto implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "prod_codigo")
+	private Integer prodCodigo;
+
+	@Column(name = "prod_descripcion")
+	private String prodDescripcion;
+
+	@Column(name = "prod_nombre")
+	private String prodNombre;
+
+	@Column(name = "prod_precio")
+	private BigDecimal prodPrecio;
+
+	public Producto() {
+	}
+
+	public Integer getProdCodigo() {
+		return this.prodCodigo;
+	}
+
+	public void setProdCodigo(Integer prodCodigo) {
+		this.prodCodigo = prodCodigo;
+	}
+
+	public String getProdDescripcion() {
+		return this.prodDescripcion;
+	}
+
+	public void setProdDescripcion(String prodDescripcion) {
+		this.prodDescripcion = prodDescripcion;
+	}
+
+	public String getProdNombre() {
+		return this.prodNombre;
+	}
+
+	public void setProdNombre(String prodNombre) {
+		this.prodNombre = prodNombre;
+	}
+
+	public BigDecimal getProdPrecio() {
+		return prodPrecio;
+	}
+
+	public void setProdPrecio(BigDecimal prodPrecio) {
+		this.prodPrecio = prodPrecio;
+	}
+
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="mod_seguridad">
+  <head>
+    <link rel="stylesheet" type="text/css" href="./resources/css/bootstrap.min.css" />
+    <script type="text/javascript" src="./resources/js/angular.min.js"></script>
+    <script type="text/javascript" src="./resources/js/app.js"></script>
+  </head>
+  <body ng-controller="SeguridadControl as seguridad">
+    <div>
+      <p>{{seguridad.usuario.nombre}}</p>
+      <em class="pull-right">{{seguridad.usuario.clave}}</em>
+      <button ng-show="{{seguridad.usuario.visible}}">Validar</button>
+    </div>
+  </body>
+</html>

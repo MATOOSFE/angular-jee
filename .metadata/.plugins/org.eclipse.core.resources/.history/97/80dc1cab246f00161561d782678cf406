@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="mod_inventario">
+<head>
+<meta charset="UTF-8">
+<title>Lista de Productos</title>
+<script type="text/javascript" src="./resources/js/angular.min.js"></script>
+<script type="text/javascript" src="./resources/js/producto.js"></script>
+</head>
+<body ng-controller="InventarioController as inven">
+	<table ng-repeat="producto in inven.productos">
+		<tr>
+			<td>{{producto.codigo}}</td>
+			<td>{{producto.nombre}}</td>
+			<td>{{producto.precio}}</td>
+		</tr>
+	</table>
+</body>
+</html>

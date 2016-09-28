@@ -1,0 +1,12 @@
+package com.matoosfe.angular.negocio;
+
+import java.util.List;
+
+import javax.ejb.Local;
+
+import com.matoosfe.angular.modelo.Producto;
+
+@Local
+public interface IProducto {
+	public List<Producto> consultarProductos() throws Exception;
+}

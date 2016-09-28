@@ -1,0 +1,9 @@
+/**
+ * Creación de controlador 
+ */
+(function(){
+	var app = angular.module('seguridad', []);
+	app.controller('SeguridadControl', function() {
+		
+	});
+})();

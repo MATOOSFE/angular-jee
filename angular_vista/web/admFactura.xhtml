@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="WEB-INF/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<ui:define name="titulo">Facturas</ui:define>
+	<ui:define name="contenido">
+		<div class="row">
+			<div class="col-xs-12" ng-app="mod_inventario"
+				ng-controller="inventarioController">
+
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Código</th>
+							<th>Nombre</th>
+							<th>Descripción</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="producto in productos | orderBy:'+prodCodigo'">
+							<td>{{producto.prodCodigo}}</td>
+							<td>{{producto.prodNombre | uppercase}}</td>
+							<td>{{producto.prodDescripcion | uppercase}}</td>
+							<td>{{producto.prodPrecio | currency}}</td>
+							<td><a href="javascript:void(0);" class="btn btn-warning"
+								ng-click="editarProducto($index)">Editar</a> <a
+								href="javascript:void(0);" class="btn btn-danger"
+								ng-click="eliminarProducto($index)">Eliminar</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<br></br>
+				<section ng-init="tab = 1">
+				<ul class="nav nav-pills">
+					<li><a href="" ng-click="tab = 1">Procesadas</a></li>
+					<li><a href="" ng-click="tab = 2">Pendientes</a></li>
+					<li><a href="" ng-click="tab = 3">Canceladas</a></li>
+				</ul>
+				<div class="panel" ng-show="tab === 1">
+					<h4>Procesadas</h4>
+					<p>Revisar</p>
+				</div>
+				<div class="panel" ng-show="tab === 2">
+					<h4>Procesadas Dos</h4>
+					<p>Revisar Dos</p>
+				</div>
+				</section>
+			</div>
+		</div>
+	</ui:define>
+	<ui:define name="scripts">
+		<h:outputScript library="js" name="angular.min.js"></h:outputScript>
+		<h:outputScript library="js" name="producto.js"></h:outputScript>
+	</ui:define>
+</ui:composition>

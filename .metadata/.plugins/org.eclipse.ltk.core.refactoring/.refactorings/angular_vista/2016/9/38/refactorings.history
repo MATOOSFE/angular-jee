@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;productos.xhtml&apos; to &apos;web&apos;&#x0A;- Original project: &apos;angular_vista&apos;&#x0A;- Destination element: &apos;web&apos;&#x0A;- Original element: &apos;productos.xhtml&apos;" description="Copy file" element1="web/productos.xhtml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1473999902837" target="/angular_vista/web" units="0" version="1.0"/>
+</session>

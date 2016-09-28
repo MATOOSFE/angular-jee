@@ -1,0 +1,34 @@
+package com.matoosfe.angular.negocio.rs;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.enterprise.context.RequestScoped;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+
+import com.matoosfe.angular.modelo.Producto;
+import com.matoosfe.angular.modelo.TipoProducto;
+
+@RequestScoped
+@Path("/tipoProductos")
+public class TipoProductoRS {
+	
+	private AdminTipoProducto adminTipoProducto;
+	
+	@GET
+	@Produces("application/json")
+	public List<TipoProducto> consultarTodos(
+			@QueryParam("start") final Integer startPosition,
+			@QueryParam("max") final Integer maxResult) {
+		List<TipoProducto> tipoProductos = new ArrayList<TipoProducto>();
+		try {
+			tipoProductos = adminProducto.consultarProductos();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return tipoProductos;
+	}
+}

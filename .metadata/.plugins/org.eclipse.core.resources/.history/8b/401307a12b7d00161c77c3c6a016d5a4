@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="WEB-INF/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<ui:define name="titulo">Productos</ui:define>
+	<ui:define name="contenido">
+		<div class="row">
+			<div class="col-xs-12" ng-app="mod_inventario"
+				ng-controller="inventarioController">
+				
+				<form role="form" novalidate="" name="productForm">
+					<input type="hidden" name="id" ng-model="prodCodigo" />
+					<div>
+						<label class="control-label">Tipo Producto:</label>
+						<select ng-model="producto.tipoProducto" 
+							ng-options="foreach tipo in tipoProductos use tipo.tipproCodigo as label use tipo.tipproNombre as model">
+						</select> 
+						<input type="text"
+							name="nombre" class="form-control" ng-model="producto.prodNombre"
+							required="" />
+					</div>
+					<div>
+						<label class="control-label">Nombre:</label> <input type="text"
+							name="nombre" class="form-control" ng-model="producto.prodNombre"
+							required="" />
+					</div>
+					<div class="form-group">
+						<label class="control-label">Descripción:</label> <input
+							type="text" name="descripcion" class="form-control"
+							ng-model="producto.prodDescripcion" required="" />
+					</div>
+					<div class="form-group">
+						<label class="control-label">Precio:</label> <input type="text"
+							name="precio" class="form-control" ng-model="producto.prodPrecio"
+							required="" />
+					</div>
+					<div class="form-group" ng-show="productForm.$valid">
+						<button class="btn btn-primary" ng-hide="producto.prodCodigo > 0 "
+							ng-click="anadirProducto(producto)">Crear</button>
+						<button class="btn btn-primary" ng-show="producto.prodCodigo > 0 "
+							ng-click="actualizarProducto(producto)">Actualizar</button>
+					</div>
+				</form>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Código</th>
+							<th>Nombre</th>
+							<th>Descripción</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="producto in productos | orderBy:'+prodCodigo'">
+							<td>{{producto.prodCodigo}}</td>
+							<td>{{producto.prodNombre | uppercase}}</td>
+							<td>{{producto.prodDescripcion | uppercase}}</td>
+							<td>{{producto.prodPrecio | currency}}</td>
+							<td><a href="javascript:void(0);" class="btn btn-warning"
+								ng-click="editarProducto($index)">Editar</a> <a
+								href="javascript:void(0);" class="btn btn-danger"
+								ng-click="eliminarProducto($index)">Eliminar</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</ui:define>
+	<ui:define name="scripts">
+		<h:outputScript library="js" name="angular.min.js"></h:outputScript>
+		<h:outputScript library="js" name="producto.js"></h:outputScript>
+	</ui:define>
+</ui:composition>

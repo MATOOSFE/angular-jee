@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;students&apos; in &apos;com.matoosfe.angular.negocio.rs.ProductoRS.consultarTodos(...)&apos; to &apos;productos&apos;&#x0A;- Original project: &apos;angular_negocio&apos;&#x0A;- Original element: &apos;com.matoosfe.angular.negocio.rs.ProductoRS.consultarTodos(Integer, Integer).students&apos;&#x0A;- Renamed element: &apos;students&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;students&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/ejbModule&lt;com.matoosfe.angular.negocio.rs{ProductoRS.java[ProductoRS~consultarTodos~QInteger;~QInteger;@students!587!637!592!599!QList;!0!false" name="productos" references="true" stamp="1472828875585" version="1.0"/>
+</session>

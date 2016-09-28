@@ -1,0 +1,5 @@
+package com.matoosfe.angular.negocio;
+
+public class ProductoFacade {
+
+}

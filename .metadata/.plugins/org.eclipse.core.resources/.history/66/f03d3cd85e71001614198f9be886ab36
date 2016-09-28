@@ -1,0 +1,29 @@
+package com.matoosfe.angular.negocio;
+
+import java.util.List;
+
+import javax.ejb.Local;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
+import com.matoosfe.angular.modelo.Producto;
+
+@Stateless
+public class ProductoFacade implements IProducto {
+
+	@PersistenceContext(unitName = "angularPU")
+	private EntityManager em;
+
+	/**
+	 * Método para consultar productos
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Producto> consultarProductos() throws Exception {
+		TypedQuery<Producto> conPro = em.createQuery(
+				"Select pro from Producto pro", Producto.class);
+		return conPro.getResultList();
+	}
+}

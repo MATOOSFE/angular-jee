@@ -1,0 +1,54 @@
+package com.matoosfe.angular.modelo;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+
+/**
+ * The persistent class for the producto database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="Producto.findAll", query="SELECT p FROM Producto p")
+public class Producto implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="prod_codigo")
+	private Integer prodCodigo;
+
+	@Column(name="prod_descripcion")
+	private String prodDescripcion;
+
+	@Column(name="prod_nombre")
+	private String prodNombre;
+
+	public Producto() {
+	}
+
+	public Integer getProdCodigo() {
+		return this.prodCodigo;
+	}
+
+	public void setProdCodigo(Integer prodCodigo) {
+		this.prodCodigo = prodCodigo;
+	}
+
+	public String getProdDescripcion() {
+		return this.prodDescripcion;
+	}
+
+	public void setProdDescripcion(String prodDescripcion) {
+		this.prodDescripcion = prodDescripcion;
+	}
+
+	public String getProdNombre() {
+		return this.prodNombre;
+	}
+
+	public void setProdNombre(String prodNombre) {
+		this.prodNombre = prodNombre;
+	}
+
+}

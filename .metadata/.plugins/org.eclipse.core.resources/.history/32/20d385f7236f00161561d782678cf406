@@ -1,0 +1,11 @@
+/**
+ * Controlador activa botón
+ * 
+ * @param $scope
+ */
+function controlador($scope) {
+	$scope.visible = true;
+	$scope.activar = function() {
+		$scope.visible = !$scope.visible;
+	};
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Conpatible" content="IE=edge" />
+	<h:outputStylesheet library="css" name="bootstrap.min1.css"></h:outputStylesheet>
+	<title>
+		<ui:insert name="title">Demo JEE - Angular</ui:insert>
+	</title>
+</h:head> 
+<h:body> 
+	<div class="container">
+		<ui:insert name="header">
+			<div class="navbar navbar-inverse">
+				<div class="navbar-brand">
+					DEMO WEB
+				</div>
+			</div>
+		</ui:insert>
+		<ui:insert name="contenido">No Content!</ui:insert>
+		<ui:insert name="pie">
+			© copyright DEMO WEB.
+		</ui:insert>
+		<ui:insert name="scripts"></ui:insert>
+	</div>
+</h:body> 
+</html>

@@ -1,0 +1,24 @@
+/**
+ * Controlador para manejar productos
+ * 
+ * @param $scope
+ */
+(function() {
+	var app = angular.module('mod_inventario', []);
+	var serviceURI = "curso_angular/rest/";
+	
+	app.controller('InventarioController', ['$scope','$http',function($scope,$http){
+		$scope.productos = [];
+		consultarProductos($scope,$http);
+		
+	}]);
+	
+	function consultarProductos($scope,$http){
+		$http.get(serviceURI + "productos").success(function(data){
+			$scope.productos = data;
+		}).error(function(error){
+			alert("No se puedo cargar los productos!" + error);
+		});
+	}
+
+})();

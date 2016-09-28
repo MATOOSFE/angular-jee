@@ -1,0 +1,41 @@
+/**
+ * Controlador para manejar productos
+ * 
+ * @param $scope
+ */
+(function() {
+	var productos = [ 
+	   {
+		   codigo : 01,
+		   nombre : "Manzana",
+		   precio: 5.3,
+	   },
+	   {
+		   codigo : 02,
+		   nombre : "Pera",
+		   precio: 5.4,
+	   },
+	   {
+		   codigo : 03,
+		   nombre : "Uva",
+		   precio: 5.9,
+	   }
+	   
+	];
+	
+	var app = angular.module('mod_inventario', []);
+	app.controller('InventarioController', ['$scope','$http',function($scope,$http){
+		$scope.productos = [];
+		consultarProductos($scope,$http);
+		
+	}]);
+	
+	function consultarProductos($scope,$http){
+		$http.get(serviceURI+"productos").success(function(data){
+			$scope.productos = data;
+		}).error(function(error){
+			alert("No se puedo cargar los productos!" + error);
+		});
+	}
+
+})();

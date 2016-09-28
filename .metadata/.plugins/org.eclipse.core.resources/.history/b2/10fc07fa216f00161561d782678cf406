@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="seguridad">
+  <head>
+    <link rel="stylesheet" type="text/css" href="./resources/css/bootstrap.min.css" />
+    <script type="text/javascript" src="./resources/js/angular.min.js"></script>
+    <script type="text/javascript" src="./resources/js/app.js"></script>
+  </head>
+  <body ng-controller="SeguridadControl as seguridad">
+    <div class="product row">
+      <h3>
+        {{seguridad.usuario.nombre}}
+        <em class="pull-right">{{seguridad.usuario.clave}}</em>
+      </h3>
+    </div>
+  </body>
+</html>

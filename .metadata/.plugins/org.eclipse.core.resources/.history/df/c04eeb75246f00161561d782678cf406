@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Página de Bienvenida</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+<script type="text/javascript" src="resources/js/controller.js"></script>	
+</head>
+<body ng-app>
+	<div ng-controller="controlador">
+		<button ng-click="activar()">Activar</button>
+		<p ng-show="visible">Hola Javeros!!</p>
+	</div>
+</body>
+</html>

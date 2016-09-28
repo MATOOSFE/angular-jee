@@ -1,0 +1,38 @@
+package com.matoosfe.angular.negocio.rs;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.ejb.EJB;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+
+import com.matoosfe.angular.modelo.TipoProducto;
+import com.matoosfe.angular.negocio.TipoProductoFacade;
+
+@Stateless
+@LocalBean
+@Path("/tipoProductos")
+public class TipoProductoRS {
+
+	@EJB
+	private TipoProductoFacade adminTipoProducto;
+
+	@GET
+	@Produces("application/json")
+	public List<TipoProducto> consultarTodos(
+			@QueryParam("start") final Integer startPosition,
+			@QueryParam("max") final Integer maxResult) {
+		List<TipoProducto> tipoProductos = new ArrayList<TipoProducto>();
+		try {
+			tipoProductos = adminTipoProducto.consultarTipoProductos();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return tipoProductos;
+	}
+}
